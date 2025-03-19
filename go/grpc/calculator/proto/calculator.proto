@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-go/calculator/proto";
+
+
+message Calculate {
+    int32 first = 1;
+    int32 second = 2;
+}
+
+message Prime {
+    int32 prime = 1;
+}
+
+message Number {
+    int32 number = 1;
+}
+
+message Result {
+    int32 result = 1;
+}
+
+service CalculatorService {
+    rpc Add(Calculate) returns (Result);
+    rpc Subtract(Calculate) returns (Result);
+    rpc Multiply(Calculate) returns (Result);
+    rpc Divine(Calculate) returns (Result);
+    rpc Primes(Prime) returns (stream Result);
+    rpc Averege(stream Number) returns (Result);
+}

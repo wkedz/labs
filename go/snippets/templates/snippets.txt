@@ -1,0 +1,47 @@
+# render the content C1 if the length of Foo is greater than 99
+{{if (gt (len .Foo) 99)}} C1 {{end}}
+
+# ender the content C1 if .Foo equals 1 and .Bar is less than or equal to 20
+{{if (and (eq .Foo 1) (le .Bar 20))}} C1 {{end}}
+
+# loop over 
+{{range .Foo}}
+  // Skip this iteration if the .ID value equals 99.
+  {{if eq .ID 99}}
+    {{continue}}
+  {{end}}
+  // ...
+{{end}}
+
+# If .Foo is not empty then render the content C1, otherwise render the content C2.
+{{if .Foo}} C1 {{else}} C2 {{end}}
+
+# If .Foo is not empty, then set dot to the value of .Foo and render the content C1,
+otherwise render the content C2.
+{{with .Foo}} C1 {{else}} C2 {{end}}
+
+If the length of .Foo is greater than zero then loop over each element, setting dot 
+to the value of each element and rendering the content C1. If the length of .Foo 
+is zero then render the content C2. The underlying type of .Foo must be an array, 
+slice, map, or channel.
+{{range .Foo}} C1 {{else}} C2 {{end}}
+
+Yields true if .Foo is equal to .Bar
+{{eq .Foo .Bar}}
+Yields true if .Foo is not equal to .Bar
+{{ne .Foo .Bar}}
+Yields the boolean negation of .Foo
+{{not .Foo}}
+Yields .Foo if .Foo is not empty; otherwise yields .Bar
+{{or .Foo .Bar}}
+Yields the value of .Foo at index i. The underlying type of
+.Foo must be a map, slice or array, and i must be an integer
+value.
+{{index .Foo i}}
+Yields a formatted string containing the .Foo and .Bar
+values. Works in the same way as fmt.Sprintf().
+{{printf "%s-%s" .Foo .Bar}}
+Yields the length of .Foo as an integer.
+{{len .Foo}}
+Assign the length of .Foo to the template variable $bar
+{{$bar := len .Foo}}
