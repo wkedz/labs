@@ -1,0 +1,20 @@
+---
+- name: Install NGINX on EC2 instances
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure NGINX is running
+      service:
+        name: nginx
+        state: started
+        enabled: true
