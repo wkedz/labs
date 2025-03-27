@@ -1,0 +1,10 @@
+---
+- hosts: 127.0.0.1
+  connection: localhost # can be local as well
+  become : no
+  tasks:
+    - name: Show facts
+      ansible.builtin.debug:
+        var: ansible_facts
+
+# ansible-playbook -i localhost, ./gather_facts.yaml -vv

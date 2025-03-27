@@ -1,0 +1,20 @@
+---
+- name: Test Handler Execution
+  hosts: localhost
+  tasks:
+    - name: Copy file1.conf
+      copy:
+        src: files/file1.conf
+        dest: /tmp/file1.conf
+      notify: Sample Handler
+
+    - name: Copy file2.conf
+      copy:
+        src: files/file2.conf
+        dest: /tmp/file2.conf
+      notify: Sample Handler
+
+  handlers:
+    - name: Sample Handler
+      debug:
+        msg: "Handler has been triggered!"

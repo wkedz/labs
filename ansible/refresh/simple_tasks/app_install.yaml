@@ -1,0 +1,10 @@
+---                                                                                                                                  
+- hosts: all                                                                                                                         
+  become: yes                                                                                                                        
+  tasks:                                                                                                                             
+    - name: Install applications                                                                                                     
+      yum:                                                                                                                           
+        name: "{{ item }}"                                                                                                           
+        state: present                                                                                                               
+      with_items:                                                                                                                    
+        - "{{ app_list }}"  

@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - copy:
+        src:  /usr/src/blog/index.html
+        dest: /opt/blog
+# Influence whether src needs to be transferred or already is present remotely.
+# If false, it will search for src on the controller node.
+# If true, it will search for src on the managed (remote) node.        
+        remote_src: yes

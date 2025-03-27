@@ -1,0 +1,14 @@
+---
+- name: 'Add name server entry if not already entered'
+  hosts: localhost
+  become: yes
+  tasks:
+    - shell: 'cat /etc/resolv.conf'
+      register: command_output
+    - shell: 'echo "nameserver 10.0.250.10" >> /etc/resolv.conf'
+      when: 'command_output.stdout.find("10.0.250.10") == -1'
+
+# shell and command modules are similar in a way
+# that they are used to execute a command on the system.
+# However, shell executes the command inside a shell giving
+# us access to environment variables and redirection using >>.

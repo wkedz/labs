@@ -1,0 +1,10 @@
+---                                                                                                                                  
+- hosts: all                                                                                                                         
+  become: yes                                                                                                                        
+  tasks:                                                                                                                             
+    - name: Set up user                                                                                                              
+      user:                                                                                                                          
+        name: "{{ user_details.username }}"                                                                                          
+        password: "{{ user_details.password }}"                                                                                      
+        comment: "{{ user_details.email }}"                                                                                          
+        state: present  

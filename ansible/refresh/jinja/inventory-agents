@@ -1,0 +1,8 @@
+monitoring_server ansible_host=admin ansible_ssh_pass=admin ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[lamp_app]
+web1 ansible_hostname=web1.company.com ansible_host=192.168.1.101 monitor_port=8080 protocol=http
+web2 ansible_hostname=web2.company.com ansible_host=192.168.1.102 monitor_port=8080 protocol=http
+db3 ansible_hostname=db3.company.com ansible_host=192.168.1.103 monitor_port=3306 protocol=tcp
+db4 ansible_hostname=db4.company.com ansible_host=192.168.1.104 monitor_port=3306 protocol=tcp
+db5 ansible_hostname=db5.company.com ansible_host=192.168.1.105 monitor_port=3306 protocol=tcp
