@@ -1,3 +1,9 @@
 [submodule "udemy/terraform-course"]
 	path = udemy/terraform-course
 	url = https://github.com/wardviaene/terraform-course
+[submodule "udemy/diveintoansible"]
+	path = udemy/diveintoansible
+	url = git@github.com:spurin/diveintoansible.git
+[submodule "udemy/diveintoansible-lab"]
+	path = udemy/diveintoansible-lab
+	url = git@github.com:spurin/diveintoansible-lab.git
