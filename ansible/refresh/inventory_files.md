@@ -1,3 +1,6 @@
+
+## Default location of inventory file
+
 Default location of inventory file 
 
 /etc/ansible/hosts
@@ -56,6 +59,8 @@ db_servers
 
 ```
 
+## Variables in inventory file
+
 Define variables in inventory file, these are group variables. Group variables have lower priority than host vars:
 
 ```
@@ -93,4 +98,22 @@ all:
                             ansible_host: 192.168.1.5
                         server_eu_2.com:
                             ansible_host: 192.168.1.6
-```                            
+```
+
+## Inline inventory file
+
+We can inline inventory file using coma. Like in this command
+```
+ansible -i,ubuntu1,ubuntu2,ubuntu3,centos1,centos2,centos3 all -m ping
+```
+
+In this example `-i,`  we specifie ubuntus and centos as inventory file.
+
+## Set inveotry file
+
+In ansile.cfg we can select name of inventory file.
+
+```ini
+[defaults]
+inventory = hosts # the name of inventory file is hosts
+```
