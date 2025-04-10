@@ -7,3 +7,9 @@
 [submodule "udemy/diveintoansible-lab"]
 	path = udemy/diveintoansible-lab
 	url = git@github.com:spurin/diveintoansible-lab.git
+[submodule "udemy/kubernetes-course"]
+	path = udemy/kubernetes-course
+	url = https://github.com/lm-academy/kubernetes-course.git
+[submodule "udemy/docker-course"]
+	path = udemy/docker-course
+	url = https://github.com/lm-academy/docker-course.git
