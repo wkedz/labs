@@ -13,3 +13,12 @@
 [submodule "udemy/docker-course"]
 	path = udemy/docker-course
 	url = https://github.com/lm-academy/docker-course.git
+[submodule "udemy/terraform-professional-certification"]
+	path = udemy/terraform-professional-certification
+	url = https://github.com/zealvora/terraform-professional-certification
+[submodule "3rd-devs"]
+	path = 3rd-devs
+	url = git@github.com:i-am-alice/3rd-devs.git
+[submodule "udemy/fastapi-the-complete-course"]
+	path = udemy/fastapi-the-complete-course
+	url = https://github.com/codingwithroby/fastapi-the-complete-course.git
