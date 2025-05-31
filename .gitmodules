@@ -22,3 +22,6 @@
 [submodule "udemy/fastapi-the-complete-course"]
 	path = udemy/fastapi-the-complete-course
 	url = https://github.com/codingwithroby/fastapi-the-complete-course.git
+[submodule "udemy/pydantic-essentials"]
+	path = udemy/pydantic-essentials
+	url = https://github.com/fbaptiste/pydantic-essentials
