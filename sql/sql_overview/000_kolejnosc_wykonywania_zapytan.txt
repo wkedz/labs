@@ -1,0 +1,14 @@
+FROM and/or JOIN clause.
+WHERE clause.
+GROUP BY clause.
+HAVING clause.
+SELECT clause. -- dzieki temu, ze select wykonuje sie przed order by, mozna w nim uzywac aliasow
+DISTINCT clause.
+ORDER BY clause.
+LIMIT and/or OFFSET clause.
+
+WHERE filtruje wiersze
+HAVING filtruje grupy
+
+INNER JOIN to to samo co JOIN
+LEFT JOIN to to samo co LEFT OUTER JOIN
